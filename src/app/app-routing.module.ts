@@ -8,8 +8,11 @@ import { EmployeeCreateCopmponent } from './employee-create/employee-create.comp
 
 const routes: Routes = [
   { path: '', component: EmployeeListComponent },
+  { path: 'users', component: EmployeeListComponent },
   {path:'addUser',component:AddEmployeeComponent},
-  {path: 'addModelUser',component: EmployeeCreateCopmponent }
+  {path: 'addModelUser',component: EmployeeCreateCopmponent },
+  {path:'editUser/:id',component:AddEmployeeComponent},
+
 ];
 
 @NgModule({

@@ -14,4 +14,15 @@ export class ApiServices {
     getData(): Observable<ApiResponse> {
         return this.http.get<ApiResponse>(this.baseUrl)
     }
+
+    postData(users) : Observable<ApiResponse>{
+        return this.http.post<ApiResponse>(this.baseUrl,users)
+    }
+
+    editData(id): Observable<ApiResponse> {
+        return this.http.get<ApiResponse>(this.baseUrl + id)
+    }
+    updateData(users) : Observable<ApiResponse>{
+        return this.http.put<ApiResponse>( this.baseUrl + users.id, users)
+    }
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiServices} from '../services/service'
+import { ApiServices} from '../services/service';
+import {Router,ActivatedRoute} from "@angular/router";
+
+
 
 @Component({
   selector: 'app-employee-list',
@@ -11,7 +14,7 @@ public users;
 public add;
 postData;
 test;
-  constructor( private service : ApiServices) { }
+  constructor( private service : ApiServices , private router : Router) { }
 
   ngOnInit(): void {
     this.add="Add Employee";
@@ -53,4 +56,7 @@ this.service.getData().subscribe(response=>{
 this.postData="From component";
   }
 
+   editMethod = (id) =>{
+    this.router.navigate(['/editUser', id])
+     }
 }
